@@ -6,8 +6,8 @@ This contains the dotfiles for system my sytem configuration.
 
 Ensure that you have the following installed in your system.
 
-`Git`
-`Stow`
+ - `Git`
+ - `Stow`
 
 ## Installation
 
