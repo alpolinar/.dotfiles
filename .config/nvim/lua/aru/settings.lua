@@ -1,8 +1,9 @@
 local global = vim.g
 local o = vim.opt
 
--- Editor options
+global.mapleader = " "
 
+-- Editor options
 o.number = true -- print the line number in front of each line
 o.relativenumber = true -- show the line number relative to the line with the cursor in front of each line
 o.clipboard = "unnamedplus" -- uses the clipboard register for all operations except yank
