@@ -12,6 +12,14 @@ return {
       require "configs.lspconfig"
     end,
   },
+  {
+    "williamboman/mason.nvim",
+    opts = {
+      ensure_installed = {
+        "rust-analyzer"
+      }
+    }
+  }
 
   -- {
   -- 	"nvim-treesitter/nvim-treesitter",
