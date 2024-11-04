@@ -3,6 +3,7 @@ if status is-interactive
 end
 
 set -g fish_greeting
+set -gx STARSHIP_CONFIG ~/.config/starship/starship.toml
 
 function nvm
   bass source (brew --prefix nvm)/nvm.sh --no-use ';' nvm $argv
