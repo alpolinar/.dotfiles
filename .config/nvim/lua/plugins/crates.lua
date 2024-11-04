@@ -1,12 +1,12 @@
 return {
   {
     "saecki/crates.nvim",
-    ft = {"rust", "toml"},
+    ft = { "rust", "toml" },
     config = function(_, opts)
-      local crates = require('crates')
+      local crates = require "crates"
       crates.setup(opts)
       crates.show()
-    end
+    end,
   },
   {
     "hrsh7th/nvim-cmp",
@@ -14,14 +14,14 @@ return {
       "hrsh7th/cmp-nvim-lsp",
     },
     config = function()
-      local cmp = require("cmp")
-      cmp.setup({
+      local cmp = require "cmp"
+      cmp.setup {
         sources = {
           { name = "nvim_lsp" },
           -- other sources...
         },
         -- rest of your cmp config...
-      })
-    end
-  }
+      }
+    end,
+  },
 }

@@ -1,7 +1,16 @@
 return {
   {
+    "williamboman/mason.nvim",
+    opts = {
+      ensure_installed = {
+        "rust-analyzer",
+        "stylua",
+      },
+    },
+  },
+  {
     "stevearc/conform.nvim",
-    -- event = 'BufWritePre', -- uncomment for format on save
+    event = "BufWritePre", -- uncomment for format on save
     opts = require "configs.conform",
   },
 
@@ -12,14 +21,6 @@ return {
       require "configs.lspconfig"
     end,
   },
-  {
-    "williamboman/mason.nvim",
-    opts = {
-      ensure_installed = {
-        "rust-analyzer"
-      }
-    }
-  }
 
   -- {
   -- 	"nvim-treesitter/nvim-treesitter",
