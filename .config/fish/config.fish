@@ -13,6 +13,8 @@ nvm use default --silent
 
 alias ls="eza --icons=always --color=always --long --no-filesize --no-time --no-user --no-permissions"
 
+alias cat=batcat
+
 starship init fish | source
 
 zoxide init --cmd cd fish | source
