@@ -15,7 +15,7 @@ nvm use default --silent
 alias ls="eza --icons=always --color=always --long --no-filesize --no-time --no-user --no-permissions"
 
 alias duckdb="~/.duckdb/duckdb"
-alias cat="batcat"
+alias cat=bat
 
 starship init fish | source
 
@@ -65,10 +65,6 @@ function genmigration
   fortune | pokesay && yarn sequelize migration:generate --name $argv[1]
 end
 
-function bat
-  batcat $argb[1]
-end
-
 function dockerUp
   sudo docker compose --env-file=.env.development -f docker-compose-dev.yml up
 end
@@ -77,3 +73,8 @@ function dockerPull
   sudo docker compose --env-file=.env-dev -f docker-compose-dev.yml pull
 end
 
+if test (uname) = "Darwin"
+    set -gx HOMEBREW_PATH /opt/homebrew/bin/fish
+else if test (uname) = "Linux" -a (grep -i pop /etc/os-release > /dev/null)
+    set -gx HOMEBREW_PATH /home/linuxbrew/.linuxbrew/bin/fish
+end
