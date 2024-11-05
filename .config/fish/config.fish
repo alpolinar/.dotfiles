@@ -12,7 +12,7 @@ end
 set -x NVM_DIR ~/.nvm
 nvm use default --silent
 
-alias ls="eza --icons=always --color=always --long --no-filesize --no-time --no-user --no-permissions"
+alias ls="eza --icons=always --color=always --long --no-filesize --no-time --no-user" 
 
 alias duckdb="~/.duckdb/duckdb"
 alias cat=bat
