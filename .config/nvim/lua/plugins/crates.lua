@@ -2,9 +2,15 @@ return {
   {
     "saecki/crates.nvim",
     ft = { "rust", "toml" },
-    config = function(_, opts)
+    config = function()
       local crates = require "crates"
-      crates.setup(opts)
+      crates.setup {
+        completion = {
+          cmp = {
+            enabled = true,
+          },
+        },
+      }
       crates.show()
     end,
   },
@@ -18,7 +24,7 @@ return {
       cmp.setup {
         sources = {
           { name = "nvim_lsp" },
-          -- other sources...
+          { name = "crates" },
         },
         -- rest of your cmp config...
       }
