@@ -26,16 +26,20 @@
       # $ nix-env -qaP | grep wget
       environment.systemPackages =
         [ 
+          pkgs.mkalias
           pkgs.stow
           pkgs.fish
           pkgs.discord
           pkgs.docker
+          pkgs.vscode
         ];
 
       homebrew = {
         enable = true;
         casks = [
           "kitty"
+          "nikitabobko/tap/aerospace"
+          "font-cascadia-code"
         ];
         brews = [
           "eza"
@@ -53,7 +57,8 @@
           "lazydocker"
           "lazygit"
           "tree"
-          "rustup-init"
+          "rustup"
+          "yazi"
         ];
         onActivation.cleanup = "zap";
       };
@@ -83,6 +88,7 @@
         dock.persistent-apps = [
           "/Applications/kitty.app"
           "/Applications/Safari.app"
+          "${pkgs.vscode}/Applications/Visual Studio Code.app"
           "${pkgs.discord}/Applications/Discord.app"
         ];
         finder.FXPreferredViewStyle = "clmv";
