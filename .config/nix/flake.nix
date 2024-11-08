@@ -100,11 +100,13 @@
       system.defaults = {
         dock.autohide = true;
         dock.persistent-apps = [
+          "/System/Applications/Calendar.app"
           "/Applications/kitty.app"
           "/Applications/Safari.app"
           "/Applications/Firefox.app"
           "/Applications/Google Chrome.app"
           "/Applications/Microsoft Edge.app"
+          "/Applications/Opera GX.app"
           "${pkgs.vscode}/Applications/Visual Studio Code.app"
           "/Applications/Xcode.app"
           "/Applications/GameMaker.app"
