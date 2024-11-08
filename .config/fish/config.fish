@@ -5,12 +5,13 @@ end
 set -g fish_greeting
 set -gx STARSHIP_CONFIG ~/.config/starship/starship.toml
 
-function nvm
-  bass source (brew --prefix nvm)/nvm.sh --no-use ';' nvm $argv
-end
 
-set -x NVM_DIR ~/.nvm
-nvm use default --silent
+#function nvm
+#  bass source (brew --prefix nvm)/nvm.sh --no-use ';' nvm $argv
+#end
+#
+#set -x NVM_DIR ~/.nvm
+#nvm use default --silent
 
 alias ls="eza --icons=always --color=always --long --no-filesize --no-time --no-user" 
 
@@ -73,8 +74,4 @@ function dockerPull
   sudo docker compose --env-file=.env-dev -f docker-compose-dev.yml pull
 end
 
-if test (uname) = "Darwin"
-    set -gx HOMEBREW_PATH /opt/homebrew/bin/fish
-else if test (uname) = "Linux" -a (grep -i pop /etc/os-release > /dev/null)
-    set -gx HOMEBREW_PATH /home/linuxbrew/.linuxbrew/bin/fish
-end
+

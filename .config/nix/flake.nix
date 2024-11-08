@@ -21,13 +21,17 @@
   outputs = inputs@{ self, nix-darwin, nixpkgs, nix-homebrew, homebrew-core, homebrew-cask }:
   let
     configuration = { pkgs, config, ... }: {
+      nixpkgs.config.allowUnfree = true;
       # List packages installed in system profile. To search by name, run:
       # $ nix-env -qaP | grep wget
       environment.systemPackages =
         [ 
           pkgs.stow
           pkgs.fish
+          pkgs.discord
+          pkgs.docker
         ];
+
       homebrew = {
         enable = true;
         casks = [
@@ -40,8 +44,20 @@
           "neovim"
           "pyenv"
           "mas"
+          "starship"
+          "fisher"
+          "bat"
+          "ripgrep"
+          "fzf"
+          "gh"
+          "lazydocker"
+          "lazygit"
+          "tree"
+          "rustup-init"
         ];
+        onActivation.cleanup = "zap";
       };
+
       system.activationScripts.applications.text = let
         env = pkgs.buildEnv {
           name = "system-applications";
@@ -61,6 +77,19 @@
           ${pkgs.mkalias}/bin/mkalias "$src" "/Applications/Nix Apps/$app_name"
         done
       '';
+
+      system.defaults = {
+        dock.autohide = true;
+        dock.persistent-apps = [
+          "/Applications/kitty.app"
+          "/Applications/Safari.app"
+          "${pkgs.discord}/Applications/Discord.app"
+        ];
+        finder.FXPreferredViewStyle = "clmv";
+        loginwindow.GuestEnabled = false;
+        NSGlobalDomain.AppleICUForce24HourTime = true;
+        NSGlobalDomain.AppleInterfaceStyle = "Dark";
+      };
       # Auto upgrade nix package and the daemon service.
       services.nix-daemon.enable = true;
       # nix.package = pkgs.nix;
@@ -69,7 +98,7 @@
       nix.settings.experimental-features = "nix-command flakes";
 
       # Enable alternative shell support in nix-darwin.
-      # programs.fish.enable = true;
+      programs.fish.enable = true;
 
       # Set Git commit hash for darwin-version.
       system.configurationRevision = self.rev or self.dirtyRev or null;
@@ -80,6 +109,11 @@
 
       # The platform the configuration will be used on.
       nixpkgs.hostPlatform = "aarch64-darwin";
+
+      users.users.alpolinar = {
+        shell = pkgs.fish;
+      };
+
     };
   in
   {
@@ -115,6 +149,8 @@
         }
       ];
     };
+
+    
 
     # Expose the package set, including overlays, for convenience.
     darwinPackages = self.darwinConfigurations."mbp14".pkgs;
