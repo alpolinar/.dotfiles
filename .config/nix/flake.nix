@@ -39,7 +39,7 @@
         casks = [
           "kitty"
           "nikitabobko/tap/aerospace"
-          "font-cascadia-code"
+          "font-cascadia-code-nf"
         ];
         brews = [
           "eza"
