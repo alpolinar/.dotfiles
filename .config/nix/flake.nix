@@ -32,6 +32,7 @@
           pkgs.discord
           pkgs.docker
           pkgs.vscode
+          pkgs.spotify
         ];
 
       homebrew = {
@@ -40,6 +41,10 @@
           "kitty"
           "nikitabobko/tap/aerospace"
           "font-cascadia-code-nf"
+          "dbeaver-community"
+          "gimp"
+          "devtoys"
+          "monitorcontrol"
         ];
         brews = [
           "eza"
@@ -59,8 +64,17 @@
           "tree"
           "rustup"
           "yazi"
+          "bun"
         ];
+        taps = [
+          "oven-sh/bun"
+        ];
+        masApps = {
+          "Xcode" = 497799835;
+        };
         onActivation.cleanup = "zap";
+        onActivation.autoUpdate = true;
+        onActivation.upgrade = true;
       };
 
       system.activationScripts.applications.text = let
@@ -88,8 +102,17 @@
         dock.persistent-apps = [
           "/Applications/kitty.app"
           "/Applications/Safari.app"
+          "/Applications/Firefox.app"
+          "/Applications/Google Chrome.app"
+          "/Applications/Microsoft Edge.app"
           "${pkgs.vscode}/Applications/Visual Studio Code.app"
+          "/Applications/Xcode.app"
+          "/Applications/GameMaker.app"
+          "/Applications/DevToys.app"
+          "/Applications/DBeaver.app"
+          "/Applications/GIMP.app"
           "${pkgs.discord}/Applications/Discord.app"
+          "${pkgs.spotify}/Applications/Spotify.app"
         ];
         finder.FXPreferredViewStyle = "clmv";
         loginwindow.GuestEnabled = false;
