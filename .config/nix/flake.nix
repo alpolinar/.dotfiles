@@ -65,6 +65,7 @@
           "rustup"
           "yazi"
           "bun"
+          "nvm"
         ];
         taps = [
           "oven-sh/bun"
@@ -105,6 +106,7 @@
           "/Applications/Safari.app"
           "/Applications/Firefox.app"
           "/Applications/Google Chrome.app"
+          "/Applications/Brave Browser.app/"
           "/Applications/Microsoft Edge.app"
           "/Applications/Opera GX.app"
           "${pkgs.vscode}/Applications/Visual Studio Code.app"
