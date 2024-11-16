@@ -66,6 +66,10 @@
           "yazi"
           "bun"
           "nvm"
+          "yarn"
+          "pnpm"
+          "fortune"
+          "btop"
         ];
         taps = [
           "oven-sh/bun"
