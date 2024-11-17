@@ -4,10 +4,15 @@ return {
     "williamboman/mason.nvim",
     opts = {
       ensure_installed = {
+        "html-lsp",
+        "css-lsp",
         "rust-analyzer",
         "stylua",
         "typescript-language-server",
         "biome",
+        "graphql-language-server-cli",
+        "tailwindcss-language-server",
+        "eslint-lsp",
       },
     },
   },
@@ -33,19 +38,39 @@ return {
               or util.find_git_ancestor(fname)
           end,
         },
+        graphql = {
+          filetypes = { "graphql", "gql" }, -- Add more if needed
+          cmd = { "graphql-lsp", "server", "--method=stdio" },
+          settings = {
+            graphql = {
+              schema = "**/*.schema.{graphql,gql}", -- Adjust based on your project structure
+              documents = "./src/**/*.{graphql,gql}",
+              format = {
+                tabWidth = 4,
+                useTabs = false,
+              },
+            },
+          },
+        },
       },
     },
     config = function()
       require "configs.lspconfig"
     end,
   },
-  -- {
-  -- 	"nvim-treesitter/nvim-treesitter",
-  -- 	opts = {
-  -- 		ensure_installed = {
-  -- 			"vim", "lua", "vimdoc",
-  --      "html", "css"
-  -- 		},
-  -- 	},
-  -- },
+  {
+    "nvim-treesitter/nvim-treesitter",
+    opts = {
+      ensure_installed = {
+        "lua",
+        "html",
+        "css",
+        "graphql",
+        "javascript",
+        "typescript",
+        "tsx",
+        "rust",
+      },
+    },
+  },
 }

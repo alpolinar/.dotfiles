@@ -35,8 +35,11 @@ local options = {
         return vim.fn.fnamemodify(params.bufname, ":p:h") -- Set working directory to the file's directory
       end,
     },
+    graphql = {
+      "biome",
+      timeout = 3000,
+    },
   },
-
   format_on_save = {
     -- These options will be passed to conform.format()
     timeout_ms = 500,
