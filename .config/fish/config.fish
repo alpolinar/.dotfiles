@@ -67,11 +67,11 @@ function genmigration
 end
 
 function dockerUp
-  sudo docker compose --env-file=.env.development -f docker-compose-dev.yml up
+  docker compose --env-file=.env.development -f docker-compose-dev.yml up
 end
 
 function dockerPull
-  sudo docker compose --env-file=.env-dev -f docker-compose-dev.yml pull
+  docker compose --env-file=.env.development -f docker-compose-dev.yml pull
 end
 
 

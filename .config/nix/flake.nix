@@ -30,7 +30,6 @@
           pkgs.stow
           pkgs.fish
           pkgs.discord
-          pkgs.docker
           pkgs.vscode
           pkgs.spotify
         ];
@@ -45,6 +44,7 @@
           "gimp"
           "devtoys"
           "monitorcontrol"
+          "docker"
         ];
         brews = [
           "eza"
@@ -82,6 +82,7 @@
         onActivation.upgrade = true;
       };
 
+
       system.activationScripts.applications.text = let
         env = pkgs.buildEnv {
           name = "system-applications";
@@ -118,6 +119,7 @@
           "/Applications/GameMaker.app"
           "/Applications/DevToys.app"
           "/Applications/DBeaver.app"
+          "/Applications/Docker.app"
           "/Applications/GIMP.app"
           "${pkgs.discord}/Applications/Discord.app"
           "${pkgs.spotify}/Applications/Spotify.app"
