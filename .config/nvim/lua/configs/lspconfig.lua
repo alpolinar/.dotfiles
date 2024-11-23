@@ -12,6 +12,7 @@ local servers = {
   "graphql",
   "tailwindcss",
   "eslint",
+  "lua_lsp"
 }
 local nvlsp = require "nvchad.configs.lspconfig"
 

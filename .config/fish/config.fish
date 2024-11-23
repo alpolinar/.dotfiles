@@ -1,10 +1,11 @@
 if status is-interactive
     # Commands to run in interactive sessions can go here
+    fish_add_path /home/linuxbrew/.linuxbrew/bin
+    fish_add_path /home/aru/.local/bin
 end
 
 set -g fish_greeting
 set -gx STARSHIP_CONFIG ~/.config/starship/starship.toml
-
 
 function nvm
   bass source (brew --prefix nvm)/nvm.sh --no-use ';' nvm $argv
@@ -75,3 +76,7 @@ function dockerPull
 end
 
 
+
+# bun
+set --export BUN_INSTALL "$HOME/.bun"
+set --export PATH $BUN_INSTALL/bin $PATH
