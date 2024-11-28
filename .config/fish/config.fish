@@ -4,7 +4,7 @@ end
 
 set -g fish_greeting
 set -gx STARSHIP_CONFIG ~/.config/starship/starship.toml
-
+set -gx LD_LIBRARY_PATH ~/.extra/sos
 
 function nvm
   bass source (brew --prefix nvm)/nvm.sh --no-use ';' nvm $argv
@@ -17,6 +17,8 @@ alias ls="eza --icons=always --color=always --long --no-filesize --no-time --no-
 
 alias duckdb="~/.duckdb/duckdb"
 alias cat=bat
+alias yaak="~/.yaak/yaak_2024.12.0_amd64.AppImage"
+alias bgsearch-ingest="~/.extra/bgsearch-ingest"
 
 starship init fish | source
 
@@ -67,11 +69,11 @@ function genmigration
 end
 
 function dockerUp
-  docker compose --env-file=.env.development -f docker-compose-dev.yml up
+  docker compose up
 end
 
 function dockerPull
-  docker compose --env-file=.env.development -f docker-compose-dev.yml pull
+  docker compose pull 
 end
 
 
