@@ -17,7 +17,6 @@ alias ls="eza --icons=always --color=always --long --no-filesize --no-time --no-
 
 alias duckdb="~/.duckdb/duckdb"
 alias cat=bat
-alias yaak="~/.yaak/yaak_2024.12.0_amd64.AppImage"
 alias bgsearch-ingest="~/.extra/bgsearch-ingest"
 
 starship init fish | source
@@ -49,7 +48,7 @@ function bbc
 end
 
 function sd
-  fortune| pokesay && yarn start:dev
+  fortune | pokesay && yarn start:dev
 end
 
 function bw
