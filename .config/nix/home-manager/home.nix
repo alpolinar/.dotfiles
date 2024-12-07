@@ -39,6 +39,17 @@
     pkgs.xclip
     pkgs.fish
     pkgs.kitty
+    pkgs.eza
+    pkgs.zoxide
+    pkgs.tmux
+    pkgs.starship
+    pkgs.fzf
+    pkgs.ripgrep
+    pkgs.lazygit
+    pkgs.lazydocker
+    pkgs.tree
+    pkgs.btop
+    pkgs.fortune
   ];
 
   nixpkgs.config.allowUnfreePredicate = 
