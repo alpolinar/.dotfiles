@@ -1,3 +1,5 @@
 **/fish_variables
 **/fish/functions
 **/fish/fish_plugins
+
+tmux/.config/tmux/plugins
