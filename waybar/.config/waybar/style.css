@@ -1,4 +1,4 @@
-@import "mocha.css"; 
+@import "mocha.css";
 
 * {
     font-family: "MesloLGS Nerd Font Mono Bold";
@@ -67,12 +67,12 @@ button:hover {
 #network,
 #mode,
 #scratchpad {
-  margin-top: 2px;
-  margin-bottom: 2px;
-  margin-left: 4px;
-  margin-right: 4px;
-  padding-left: 4px;
-  padding-right: 4px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    margin-left: 4px;
+    margin-right: 4px;
+    padding-left: 4px;
+    padding-right: 4px;
 }
 
 #clock {
