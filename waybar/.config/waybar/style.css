@@ -9,11 +9,9 @@
 
 window#waybar {
     background: transparent;
-    background-color: @crust;
-    color: @overlay0;
+    color: @mauve;
     transition-property: background-color;
     transition-duration: 0.1s;
-    border-bottom: 1px solid @overlay1;
 }
 
 #window {
@@ -76,23 +74,20 @@ button:hover {
 }
 
 #clock {
-    color: @maroon;
-    border-bottom: 2px solid @maroon;
+    padding: 0 5px;
 }
 
 #clock.date {
-    color: @mauve;
-    border-bottom: 2px solid @mauve;
+    padding: 0 5px;
 }
 
 #pulseaudio {
-    color: @blue;
-    border-bottom: 2px solid @blue;
+    padding: 0 5px;
 }
 
 #network {
-    color: @yellow;
-    border-bottom: 2px solid @yellow;
+    padding: 0 5px;
+
 }
 
 #idle_inhibitor {
@@ -105,8 +100,7 @@ button:hover {
 }
 
 #battery {
-    color: @green;
-    border-bottom: 2px solid @green;
+    padding: 0 5px;
 }
 
 /* If workspaces is the leftmost module, omit left margin */

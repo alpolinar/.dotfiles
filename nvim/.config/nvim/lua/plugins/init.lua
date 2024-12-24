@@ -26,6 +26,9 @@ return {
     opts = {
       servers = {
         ts_ls = {
+          root_dir = function(fname)
+            return util.root_pattern "tsconfig.json"(fname)
+          end,
           on_attach = function(client)
             client.server_capabilities.documentFormattingProvider = false
           end,
