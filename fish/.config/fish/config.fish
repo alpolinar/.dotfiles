@@ -67,11 +67,13 @@ function genmigration
 end
 
 function dockerUp
-  docker compose --env-file=.env.development -f docker-compose-dev.yml up
+  docker compose --env-file=.env -f docker-compose.yml up
 end
 
 function dockerPull
-  docker compose --env-file=.env.development -f docker-compose-dev.yml pull
+  docker compose --env-file=.env -f docker-compose.yml pull
 end
 
-
+# bun
+set --export BUN_INSTALL "$HOME/.bun"
+set --export PATH $BUN_INSTALL/bin $PATH
