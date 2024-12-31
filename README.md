@@ -18,7 +18,7 @@ $ git clone git@github.com:alpolinar/.dotfiles.git
 $ cd .dotfiles
 ```
 ```
-stow .
+stow `configName`
 ```
 ## tmux
 
