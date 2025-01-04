@@ -26,9 +26,6 @@ First, clone the repo in your `$HOME` directory using git.
 git clone git@github.com:alpolinar/.dotfiles.git
 cd .dotfiles
 ```
-```
-stow 'configName'
-```
 ### Example
 ```
 stow fish
