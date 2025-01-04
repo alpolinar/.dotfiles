@@ -21,7 +21,7 @@ Ensure that you have the following installed in your system.
  - `bass`
 
 ## Installation
-First, clone the .dotfiles repo in your $HOME directory using git.
+First, clone the repo in your `$HOME` directory using git.
 ```
 git clone git@github.com:alpolinar/.dotfiles.git
 cd .dotfiles
@@ -48,4 +48,4 @@ default `ctrl-b + I`
 To install `mason LSP`, make sure `npm` is installed either via `nvm` (preferred) or install `NodeJS` and `npm` manually.
 
 ## fish
-Fish config requires [`bass`](https://github.com/edc/bass) to add `nvm` to path. Install [`fisher`](https://github.com/jorgebucaran/fisher) fish plugin manager to install `bass`. 
+Fish config requires [bass](https://github.com/edc/bass) to add `nvm` to path. Install [fisher](https://github.com/jorgebucaran/fisher) fish plugin manager to install it. 
