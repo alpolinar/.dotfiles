@@ -3,22 +3,28 @@ This contains the dotfiles for system my sytem configuration.
 
 ## Requirements
 Ensure that you have the following installed in your system.
- - `git`
- - `stow`
- - `unzip`
- - `fish`
- - `kitty`
- - `fzf`
- - `zoxide`
- - `ripgrep`
- - `neovim`
- - `tmux`
- - `yazi`
- - `starship`
- - `bat`
- - `eza`
- - `fisher`
- - `bass`
+ - git
+ - stow
+ - unzip
+ - fish
+ - kitty
+ - fzf
+ - zoxide
+ - ripgrep
+ - neovim
+ - tmux
+ - yazi
+ - starship
+ - bat
+ - eza
+ - fisher
+ - bass
+
+## ENV Variables
+Create an environment file called `env` and add following below:
+ - WORK_DIR=/your/work/dir/path
+
+Relative path works.
 
 ## Installation
 First, clone the repo in your `$HOME` directory using git.

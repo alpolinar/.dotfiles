@@ -1,6 +1,5 @@
 #!/usr/bin/env fish
 
-set WORK_DIR $argv[1]
 set PACKAGE_ROOT "$WORK_DIR/packages"
 set SESSIONS \
     "editor:cd $WORK_DIR" \
@@ -20,12 +19,6 @@ for SESSION in $SESSIONS
   if tmux list-sessions | grep -q "^$NAME:" 
     echo "Session $NAME already exists. Skipping."
   else
-    # eval $COMMAND
-    # if not test $status -eq 0
-    #   echo "Failed to execute command for session: $NAME. Skipping."
-    #   continue
-    # end
-    # Create a new session and start a shell
     tmux new-session -d -s "$NAME"
     if test $NAME = "root"
       tmux split-window -h

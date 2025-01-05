@@ -73,6 +73,7 @@ return {
         "typescript",
         "tsx",
         "rust",
+        "fish",
       },
     },
   },

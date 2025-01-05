@@ -1,7 +1,8 @@
 **/fish_variables
-**/fish/functions
 **/fish/fish_plugins
 **/fish/completions
+
+**/fish/functions/*bass.*
 **/**/lazy-lock.json
 
 tmux/.config/tmux/plugins
