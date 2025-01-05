@@ -1,5 +1,6 @@
 #!/usr/bin/env fish
 
+set WORK_DIR $argv[1]
 set PACKAGE_ROOT "$WORK_DIR/packages"
 set SESSIONS \
     "editor:cd $WORK_DIR" \
@@ -16,9 +17,14 @@ for SESSION in $SESSIONS
   set NAME (echo $SESSION | cut -d ':' -f 1)
   set COMMAND (echo $SESSION | cut -d ':' -f 2-)
   # Check if the session already exists
-  if tmux list-sessions | grep -q "^$NAME:" ^/dev/null
+  if tmux list-sessions | grep -q "^$NAME:" 
     echo "Session $NAME already exists. Skipping."
   else
+    # eval $COMMAND
+    # if not test $status -eq 0
+    #   echo "Failed to execute command for session: $NAME. Skipping."
+    #   continue
+    # end
     # Create a new session and start a shell
     tmux new-session -d -s "$NAME"
     if test $NAME = "root"
@@ -40,7 +46,7 @@ for SESSION in $SESSIONS
     else if test $NAME = "editor"
       tmux send-keys "$COMMAND && nvim" C-m
     else
-        tmux send-keys "$COMMAND" C-m
+      tmux send-keys "$COMMAND" C-m
     end
     echo "Created tmux session: $NAME"
   end
