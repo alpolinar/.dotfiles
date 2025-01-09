@@ -8,7 +8,8 @@ set SESSIONS \
     "files:cd ~/Documents" \
     "datascape:cd $PACKAGE_ROOT" \
     "studio:cd $PACKAGE_ROOT" \
-    "etl:cd $PACKAGE_ROOT/bg-etl"
+    "etl:cd $PACKAGE_ROOT/bg-etl" \
+    "basilisk:cd $PACKAGE_ROOT"
 
 # Iterate over the sessions
 for SESSION in $SESSIONS
@@ -38,6 +39,10 @@ for SESSION in $SESSIONS
       tmux send-keys -t 2 "$COMMAND/bg-studio" C-m
     else if test $NAME = "editor"
       tmux send-keys "$COMMAND && nvim" C-m
+    else if test $NAME = "basilisk"
+      tmux split-window -h
+      tmux send-keys -t 1 "$COMMAND/bg-basilisk-board" C-m
+      tmux send-keys -t 2 "$COMMAND/bg-studio-consumer" C-m
     else
       tmux send-keys "$COMMAND" C-m
     end
