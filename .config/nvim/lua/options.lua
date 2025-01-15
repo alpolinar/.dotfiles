@@ -9,3 +9,6 @@ opt.relativenumber = true
 
 opt.shiftwidth = 4
 opt.tabstop = 4
+opt.foldmethod = "expr"
+opt.foldexpr = "nvim_treesitter#foldexpr()"
+opt.foldenable = false
