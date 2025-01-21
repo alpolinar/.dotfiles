@@ -22,6 +22,7 @@ load_env
 
 set -g fish_greeting
 set -gx STARSHIP_CONFIG ~/.config/starship/starship.toml
+set -gx WEBKIT_DISABLE_COMPOSITING_MODE 1
 
 function nvm
   bass source /usr/share/nvm/nvm.sh --no-use ';' nvm $argv
