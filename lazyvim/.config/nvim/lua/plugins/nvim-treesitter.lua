@@ -18,6 +18,11 @@ return {
         "vim",
         "yaml",
         "graphql",
+        "go",
+        "rust",
+        "java",
+        "c",
+        "cpp",
       })
     end,
   },

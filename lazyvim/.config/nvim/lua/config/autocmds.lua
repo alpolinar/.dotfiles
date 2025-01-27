@@ -23,7 +23,8 @@ local filetype_settings = {
   html = { expandtab = true, shiftwidth = 2, tabstop = 2 },
   css = { expandtab = true, shiftwidth = 2, tabstop = 2 },
   yaml = { expandtab = true, shiftwidth = 2, tabstop = 2 },
-  json = { expandtab = true, shiftwidth = 2, tabstop = 2 },
+  json = { expandtab = true, shiftwidth = 4, tabstop = 4 },
+  jsonc = { expandtab = true, shiftwidth = 4, tabstop = 4 },
 }
 
 vim.api.nvim_create_augroup("AutoIndent", { clear = true })
