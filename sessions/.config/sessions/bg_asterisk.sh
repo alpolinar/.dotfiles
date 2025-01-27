@@ -22,9 +22,7 @@ for SESSION in $SESSIONS
   else
     tmux new-session -d -s "$NAME"
     if test $NAME = "root"
-      tmux split-window -h
-      tmux send-keys -t 1 "$COMMAND" C-m
-      tmux send-keys -t 2 "$COMMAND && lazygit" C-m
+      tmux send-keys "$COMMAND" C-m
     else if test $NAME = "docker"
       tmux split-window -h
       tmux send-keys -t 1 "$COMMAND" C-m
