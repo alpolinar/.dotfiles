@@ -17,8 +17,6 @@ return {
         "typescript",
         "vim",
         "yaml",
-        "tsx",
-        "typescript",
         "graphql",
       })
     end,

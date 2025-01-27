@@ -261,15 +261,20 @@ local dashboard_art = {
 return {
   {
     "folke/snacks.nvim",
-    -- priority = 1000,
-    -- lazy = false,
-    ---@type snacks.Config
+    priority = 1000,
+    lazy = false,
+    ---@class snacks.Config
     opts = {
+      ---@class snacks.dashboard.Config
       dashboard = {
         enabled = true,
         preset = {
           header = dashboard_art[math.random(#dashboard_art)],
         },
+      },
+      ---@class snacks.indent.Config
+      indent = {
+        enabled = true,
       },
     },
   },
