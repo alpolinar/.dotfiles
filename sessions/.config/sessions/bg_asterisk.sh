@@ -42,7 +42,7 @@ for SESSION in $SESSIONS
     else if test $NAME = "basilisk"
       tmux split-window -h
       tmux send-keys -t 1 "$COMMAND/bg-basilisk-board" C-m
-      tmux send-keys -t 2 "$COMMAND/bg-studio-consumer" C-m
+      tmux send-keys -t 2 "$COMMAND/bg-basilisk-consumer" C-m
     else
       tmux send-keys "$COMMAND" C-m
     end

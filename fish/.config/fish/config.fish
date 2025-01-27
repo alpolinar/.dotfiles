@@ -15,25 +15,26 @@ function load_env
         set key (string trim $key)
         set value (string trim $value)
         set -gx $key $value
-    end < ~/.config/fish/env
+    end <~/.config/fish/env
 end
 
 load_env
 
 set -g fish_greeting
 set -gx STARSHIP_CONFIG ~/.config/starship/starship.toml
-set -gx WEBKIT_DISABLE_COMPOSITING_MODE 1
+set -g VISUAL nvim
+set -g EDITOR nvim
 
 function nvm
-  bass source /usr/share/nvm/nvm.sh --no-use ';' nvm $argv
+    bass source $NVM_PATH/nvm.sh --no-use ';' nvm $argv
 end
 
 set -x NVM_DIR ~/.nvm
 nvm use default --silent
 
-alias ls="eza --icons=always --color=always --long --no-filesize --no-time --no-user" 
+alias ls="eza --icons=always --color=always --long --no-filesize --no-time --no-user"
 
-# alias duckdb="~/.duckdb/duckdb"
+alias duckdb="~/.duckdb/duckdb"
 alias cat=bat
 
 starship init fish | source
@@ -41,55 +42,55 @@ starship init fish | source
 zoxide init --cmd cd fish | source
 
 function boot
-  yarn bootstrap:clean
+    yarn bootstrap:clean
 end
 
 function build
-  yarn build:all
+    yarn build:all
 end
 
 function check
-  yarn tsc:check
+    yarn tsc:check
 end
 
 function bb
-  boot && build
+    boot && build
 end
 
 function bck
-  build && check
+    build && check
 end
 
 function bbc
-  bb && check
+    bb && check
 end
 
 function sd
-  yarn start:dev
+    yarn start:dev
 end
 
 function bw
-  yarn build:watch
+    yarn build:watch
 end
 
 function typegen
-  yarn gt:gen
+    yarn gt:gen
 end
 
 function syncent
-  yarn build:ent:sync
+    yarn build:ent:sync
 end
 
 function genmigration
-  yarn sequelize migration:generate --name $argv[1]
+    yarn sequelize migration:generate --name $argv[1]
 end
 
 function dockerUp
-  docker compose --env-file=.env -f docker-compose.yml up
+    docker compose --env-file=.env -f docker-compose.yml up
 end
 
 function dockerPull
-  docker compose --env-file=.env -f docker-compose.yml pull
+    docker compose --env-file=.env -f docker-compose.yml pull
 end
 
 # bun
