@@ -9,7 +9,6 @@ return {
         "flake8",
         "biome",
         "graphql-language-service-cli",
-        "typescript-language-server",
       },
     },
   },

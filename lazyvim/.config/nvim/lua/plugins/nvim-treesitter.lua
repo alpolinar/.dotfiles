@@ -19,6 +19,7 @@ return {
         "yaml",
         "tsx",
         "typescript",
+        "graphql",
       })
     end,
   },
