@@ -22,6 +22,7 @@ load_env
 
 set -g fish_greeting
 set -gx STARSHIP_CONFIG ~/.config/starship/starship.toml
+set -gx LD_LIBRARY_PATH ~/.extra/sos
 set -g VISUAL nvim
 set -g EDITOR nvim
 
