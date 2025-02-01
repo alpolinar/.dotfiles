@@ -25,6 +25,7 @@ set -gx STARSHIP_CONFIG ~/.config/starship/starship.toml
 set -gx LD_LIBRARY_PATH ~/.extra/sos
 set -g VISUAL nvim
 set -g EDITOR nvim
+set -g WEBKIT_DISABLE_COMPOSITING_MODE 1
 
 function nvm
     bass source $NVM_PATH/nvm.sh --no-use ';' nvm $argv
