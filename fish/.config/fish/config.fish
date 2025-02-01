@@ -15,7 +15,7 @@ function load_env
         set key (string trim $key)
         set value (string trim $value)
         set -gx $key $value
-    end <~/.config/fish/env
+    end <~/.config/sessions/env
 end
 
 load_env

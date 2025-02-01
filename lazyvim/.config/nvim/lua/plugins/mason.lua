@@ -14,6 +14,7 @@ return {
         "css-lsp",
         "html-lsp",
         "rust-analyzer",
+        "tailwindcss-language-server",
       },
     },
   },

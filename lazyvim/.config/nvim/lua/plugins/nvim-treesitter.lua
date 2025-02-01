@@ -23,6 +23,7 @@ return {
         "java",
         "c",
         "cpp",
+        "css",
       })
     end,
   },
