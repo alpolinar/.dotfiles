@@ -11,7 +11,7 @@ function session
     end
     switch $action
         case biggeo
-            ~/.config/sessions/bg_asterisk/bg_asterisk.sh
+            ~/.config/sessions/bg-asterisk/bg_asterisk.sh
         case '*'
             echo "Invalid option: $action"
             echo "Valid options are: $valid_options"
