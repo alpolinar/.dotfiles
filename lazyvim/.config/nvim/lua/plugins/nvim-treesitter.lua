@@ -24,6 +24,8 @@ return {
         "c",
         "cpp",
         "css",
+        "fish",
+        "hyprlang",
       })
     end,
   },

@@ -1,10 +1,10 @@
 #!/usr/bin/env fish
 
-set PACKAGE_ROOT "$WORK_DIR/packages"
+set PACKAGE_ROOT "$ASTERISK_DIR/packages"
 set SESSIONS \
-    "editor:cd $WORK_DIR" \
-    "root:cd $WORK_DIR" \
-    "docker:cd $WORK_DIR/datascape-dev" \
+    "editor:cd $ASTERISK_DIR" \
+    "root:cd $ASTERISK_DIR" \
+    "docker:cd $ASTERISK_DIR/datascape-dev" \
     "files:cd ~/Documents" \
     "datascape:cd $PACKAGE_ROOT" \
     "studio:cd $PACKAGE_ROOT" \

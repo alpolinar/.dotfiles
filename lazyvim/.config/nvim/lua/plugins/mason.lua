@@ -15,6 +15,7 @@ return {
         "html-lsp",
         "rust-analyzer",
         "tailwindcss-language-server",
+        "hyprls",
       },
     },
   },
