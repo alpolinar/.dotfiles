@@ -11,7 +11,7 @@ function session
     end
     switch $action
         case asterisk
-            ~/.config/sessions/biggeo/asterisk.sh
+            ~/.config/sessions/asterisk/asterisk.sh
         case co-working
             ~/.config/sessions/ods/co-working.sh
         case '*'

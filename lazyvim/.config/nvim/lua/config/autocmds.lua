@@ -36,7 +36,6 @@ vim.api.nvim_create_autocmd("FileType", {
   callback = function()
     local ft = vim.bo.filetype
     local settings = filetype_settings[ft]
-
     if settings then
       for option, value in pairs(settings) do
         vim.bo[option] = value
