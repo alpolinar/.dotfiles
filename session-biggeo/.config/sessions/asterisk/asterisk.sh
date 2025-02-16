@@ -9,7 +9,8 @@ set SESSIONS \
     "datascape:cd $PACKAGE_ROOT" \
     "studio:cd $PACKAGE_ROOT" \
     "etl:cd $PACKAGE_ROOT/bg-etl" \
-    "basilisk:cd $PACKAGE_ROOT"
+    "basilisk:cd $PACKAGE_ROOT" \
+    "datalab:cd $PACKAGE_ROOT/bg-datalab"
 
 # Iterate over the sessions
 for SESSION in $SESSIONS
@@ -41,6 +42,8 @@ for SESSION in $SESSIONS
       tmux split-window -h
       tmux send-keys -t 1 "$COMMAND/bg-basilisk-board" C-m
       tmux send-keys -t 2 "$COMMAND/bg-basilisk-consumer" C-m
+    else if test $NAME = "datalab"
+      tmux send-keys "$COMMAND" C-m
     else
       tmux send-keys "$COMMAND" C-m
     end

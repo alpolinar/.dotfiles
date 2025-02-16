@@ -75,7 +75,7 @@ function bw
     yarn build:watch
 end
 
-function typegen
+function gt
     yarn gt:gen
 end
 
