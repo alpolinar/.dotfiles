@@ -19,8 +19,8 @@ for SESSION in $SESSIONS
       tmux send-keys "$COMMAND && nvim" C-m
     else if test $NAME = "server"
       tmux split-window -h
-      tmux send-keys -t 1 "$COMMAND/ft1-server && bun run dev" C-m
-      tmux send-keys -t 2 "$COMMAND/first-to-100 && bun run dev" C-m
+      tmux send-keys -t 1 "$COMMAND/ft1-server" C-m
+      tmux send-keys -t 2 "$COMMAND/first-to-100" C-m
     else
       tmux send-keys "$COMMAND" C-m
     end
