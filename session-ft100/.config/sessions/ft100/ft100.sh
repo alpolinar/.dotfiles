@@ -3,7 +3,8 @@
 set PACKAGE_ROOT "$FT100_WORKING_DIR/packages"
 set SESSIONS \
   "editor:cd $FT100_WORKING_DIR" \
-  "server:cd $FT100_WORKING_DIR/packages"
+  "server:cd $FT100_WORKING_DIR/packages" \
+  "docker:cd $FT100_WORKING_DIR"
 
 # Iterate over the sessions
 for SESSION in $SESSIONS
@@ -21,12 +22,17 @@ for SESSION in $SESSIONS
       tmux split-window -h
       tmux send-keys -t 1 "$COMMAND/ft1-server" C-m
       tmux send-keys -t 2 "$COMMAND/first-to-100" C-m
+    else if test $NAME = "docker"
+      tmux split-window -h
+      tmux send-keys -t 1 "$COMMAND" C-m
+      tmux send-keys -t 2 "$COMMAND && lazydocker" C-m
     else
       tmux send-keys "$COMMAND" C-m
     end
     echo "Created tmux session: $NAME"
   end
 end
+
 
 # Attach to the first session
 set FIRST_SESSION (echo $SESSIONS[1] | cut -d ':' -f 1)
