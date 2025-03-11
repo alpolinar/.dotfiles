@@ -5,12 +5,12 @@ set SESSIONS \
     "editor:cd $ASTERISK_DIR" \
     "root:cd $ASTERISK_DIR" \
     "docker:cd $ASTERISK_DIR/datascape-dev" \
-    "files:cd ~/Documents" \
     "datascape:cd $PACKAGE_ROOT" \
     "studio:cd $PACKAGE_ROOT" \
     "etl:cd $PACKAGE_ROOT/bg-etl" \
     "basilisk:cd $PACKAGE_ROOT" \
-    "datalab:cd $PACKAGE_ROOT/bg-datalab"
+    "datalab:cd $PACKAGE_ROOT/bg-datalab" \
+    "lib-packages:cd $PACKAGE_ROOT"
 
 # Iterate over the sessions
 for SESSION in $SESSIONS
@@ -44,6 +44,10 @@ for SESSION in $SESSIONS
       tmux send-keys -t 2 "$COMMAND/bg-basilisk-consumer" C-m
     else if test $NAME = "datalab"
       tmux send-keys "$COMMAND" C-m
+    else if test $NAME = "lib-packages"
+      tmux split-window -h
+      tmux send-keys -t 1 "$COMMAND/bg-ui" C-m
+      tmux send-keys -t 2 "$COMMAND/bg-common" C-m
     else
       tmux send-keys "$COMMAND" C-m
     end
