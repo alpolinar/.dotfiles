@@ -44,15 +44,15 @@ starship init fish | source
 zoxide init --cmd cd fish | source
 
 function boot
-    yarn bootstrap:clean
+    pnpm bootstrap:clean
 end
 
 function build
-    yarn build:all
+    pnpm build:all
 end
 
 function check
-    yarn tsc:check
+    pnpm tsc:check
 end
 
 function bb
@@ -68,23 +68,23 @@ function bbc
 end
 
 function sd
-    yarn start:dev
+    pnpm start:dev
 end
 
 function bw
-    yarn build:watch
+    pnpm build:watch
 end
 
 function gt
-    yarn gt:gen
+    pnpm gt:gen
 end
 
 function syncent
-    yarn build:ent:sync
+    pnpm build:ent:sync
 end
 
 function genmigration
-    yarn sequelize migration:generate --name $argv[1]
+    pnpm sequelize migration:generate --name $argv[1]
 end
 
 function dockerUp
