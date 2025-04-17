@@ -43,10 +43,6 @@ starship init fish | source
 
 zoxide init --cmd cd fish | source
 
-function clean
-    pnpm clean
-end
-
 function boot
     pnpm bootstrap:clean
 end
@@ -60,7 +56,7 @@ function check
 end
 
 function bb
-    bootclean && build
+    boot && build
 end
 
 function bck
@@ -91,13 +87,6 @@ function genmigration
     pnpm sequelize migration:generate --name $argv[1]
 end
 
-function dockerUp
-    docker compose --env-file=.env -f docker-compose.yml up
-end
-
-function dockerPull
-    docker compose --env-file=.env -f docker-compose.yml pull
-end
 
 # bun
 set --export BUN_INSTALL "$HOME/.bun"
