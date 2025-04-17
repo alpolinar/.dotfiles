@@ -43,6 +43,10 @@ starship init fish | source
 
 zoxide init --cmd cd fish | source
 
+function clean
+    pnpm clean
+end
+
 function boot
     pnpm bootstrap:clean
 end
@@ -56,7 +60,7 @@ function check
 end
 
 function bb
-    boot && build
+    bootclean && build
 end
 
 function bck
@@ -107,3 +111,7 @@ end
 
 # go
 set --export PATH /usr/local/go/bin $PATH
+
+# depot
+set --export DEPOT_INSTALL_DIR "/home/alpolinar/.depot/bin"
+set --export PATH "$DEPOT_INSTALL_DIR:$PATH"
