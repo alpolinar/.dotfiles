@@ -7,7 +7,7 @@ function load_env
         if echo $line | grep -q '^\s*#'
             continue
         end
-        if test -z $line
+        if test -z "$line"
             continue
         end
         set key (echo $line | cut -d '=' -f 1)
