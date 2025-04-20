@@ -3,7 +3,7 @@
 set PACKAGE_ROOT "$FT100_WORKING_DIR/packages"
 set SESSIONS \
     "editor:cd $FT100_WORKING_DIR" \
-    "server:cd $FT100_WORKING_DIR/packages"
+    "apps:cd $FT100_WORKING_DIR/packages"
 # Iterate over the sessions
 for SESSION in $SESSIONS
     # Split the session name and the command
@@ -16,7 +16,7 @@ for SESSION in $SESSIONS
         tmux new-session -d -s "$NAME"
         if test $NAME = editor
             tmux send-keys "$COMMAND && nvim" C-m
-        else if test $NAME = server
+        else if test $NAME = apps
             tmux split-window -h
             tmux send-keys -t 1 "$COMMAND/server" C-m
             tmux send-keys -t 2 "$COMMAND/frontend" C-m

@@ -34,14 +34,19 @@ end
 set -x NVM_DIR ~/.nvm
 nvm use default --silent
 
-alias ls="eza --icons=always --color=always --long --no-filesize --no-time --no-user"
-
 alias duckdb="~/.duckdb/duckdb"
-alias cat=bat
 
 starship init fish | source
 
 zoxide init --cmd cd fish | source
+
+function ls
+    eza --icons=always --color=always --long --no-filesize --no-time --no-user
+end
+
+function cat
+    bat $argv
+end
 
 function boot
     pnpm bootstrap:clean
@@ -86,7 +91,6 @@ end
 function genmigration
     pnpm sequelize migration:generate --name $argv[1]
 end
-
 
 # bun
 set --export BUN_INSTALL "$HOME/.bun"
