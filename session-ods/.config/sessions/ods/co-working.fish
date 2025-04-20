@@ -1,9 +1,12 @@
 #!/usr/bin/env fish
 
-set PACKAGE_ROOT "$FT100_WORKING_DIR/packages"
+set PACKAGE_ROOT "$CO_WORKING_DIR/packages"
 set SESSIONS \
-    "editor:cd $FT100_WORKING_DIR" \
-    "server:cd $FT100_WORKING_DIR/packages"
+    "editor:cd $CO_WORKING_DIR" \
+    "db:cd $CO_WORKING_DIR" \
+    "server:cd $PACKAGE_ROOT/backend" \
+    "co-working:cd $PACKAGE_ROOT/frontend"
+
 # Iterate over the sessions
 for SESSION in $SESSIONS
     # Split the session name and the command
@@ -16,10 +19,14 @@ for SESSION in $SESSIONS
         tmux new-session -d -s "$NAME"
         if test $NAME = editor
             tmux send-keys "$COMMAND && nvim" C-m
+        else if test $NAME = db
+            tmux send-keys "$COMMAND && bun run db:run" C-m
         else if test $NAME = server
             tmux split-window -h
-            tmux send-keys -t 1 "$COMMAND/server" C-m
-            tmux send-keys -t 2 "$COMMAND/frontend" C-m
+            tmux send-keys -t 1 "$COMMAND && bun run dev" C-m
+            tmux send-keys -t 2 "$COMMAND && bun run studio" C-m
+        else if test $NAME = co-working
+            tmux send-keys "$COMMAND && bun run dev" C-m
         else
             tmux send-keys "$COMMAND" C-m
         end

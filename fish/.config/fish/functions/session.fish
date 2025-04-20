@@ -11,11 +11,11 @@ function session
     end
     switch $action
         case asterisk
-            ~/.config/sessions/asterisk/asterisk.sh
+            ~/.config/sessions/asterisk/asterisk.fish
         case co-working
-            ~/.config/sessions/ods/co-working.sh
+            ~/.config/sessions/ods/co-working.fish
         case ft100
-            ~/.config/sessions/ft100/ft100.sh
+            ~/.config/sessions/ft100/ft100.fish
         case '*'
             echo "Invalid option: $action"
             echo "Valid options are: $valid_options"
