@@ -26,6 +26,7 @@ local filetype_settings = {
   json = { expandtab = true, shiftwidth = 4, tabstop = 4 },
   jsonc = { expandtab = true, shiftwidth = 4, tabstop = 4 },
   graphql = { expandtab = true, shiftwidth = 4, tabstop = 4 },
+  fish = { expandtab = true, shiftwidth = 4, tabstop = 4 },
 }
 
 vim.api.nvim_create_augroup("AutoIndent", { clear = true })
