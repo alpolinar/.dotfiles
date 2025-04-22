@@ -16,7 +16,7 @@ for SESSION in $SESSIONS
     else
         tmux new-session -d -s "$NAME"
         if test $NAME = editor
-            tmux send-keys "$COMMAND" C-m
+            tmux send-keys "$COMMAND && nvim" C-m
         else if test $NAME = apps
             tmux send-keys -t "$NAME" "$COMMAND/server" C-m
 
@@ -40,6 +40,6 @@ for SESSION in $SESSIONS
 end
 
 # Attach to the first session
-set FIRST_SESSION (echo $SESSIONS[2] | cut -d ':' -f 1)
+set FIRST_SESSION (echo $SESSIONS[1] | cut -d ':' -f 1)
 echo "Attaching to the first session: $FIRST_SESSION"
 tmux attach-session -t "$FIRST_SESSION"
