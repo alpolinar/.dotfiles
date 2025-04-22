@@ -30,8 +30,8 @@ for SESSION in $SESSIONS
             tmux send-keys -t "$NAME".2 "$COMMAND/server-lib" C-m
 
             # Split pane 3 vertically to create pane 4
-            # tmux split-window -v -t "$NAME".3
-            # tmux send-keys -t "$NAME".4 "cd $FT100_WORKING_DIR" C-m
+            tmux split-window -v -t "$NAME".3
+            tmux send-keys -t "$NAME".4 "cd $FT100_WORKING_DIR" C-m
         else
             tmux send-keys "$COMMAND" C-m
         end
