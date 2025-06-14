@@ -26,6 +26,7 @@ set -gx LD_LIBRARY_PATH ~/.extra/sos
 set -g VISUAL nvim
 set -g EDITOR nvim
 set -g WEBKIT_DISABLE_COMPOSITING_MODE 1
+set -gx PATH /opt/homebrew/bin $PATH
 
 function nvm
     bass source $NVM_PATH/nvm.sh --no-use ';' nvm $argv
@@ -41,7 +42,7 @@ starship init fish | source
 zoxide init --cmd cd fish | source
 
 function ls
-    eza --icons=always --color=always --long --no-filesize --no-time --no-user
+    eza --icons=always --color=always --long --no-filesize --no-time --no-user $argv
 end
 
 function cat
