@@ -22,11 +22,9 @@ load_env
 
 set -g fish_greeting
 set -gx STARSHIP_CONFIG ~/.config/starship/starship.toml
-set -gx LD_LIBRARY_PATH ~/.extra/sos
 set -g VISUAL nvim
 set -g EDITOR nvim
 set -g WEBKIT_DISABLE_COMPOSITING_MODE 1
-set -gx PATH /opt/homebrew/bin $PATH
 
 function nvm
     bass source $NVM_PATH/nvm.sh --no-use ';' nvm $argv
@@ -34,8 +32,6 @@ end
 
 set -x NVM_DIR ~/.nvm
 nvm use default --silent
-
-alias duckdb="~/.duckdb/duckdb"
 
 starship init fish | source
 
@@ -47,50 +43,6 @@ end
 
 function cat
     bat $argv
-end
-
-function boot
-    pnpm bootstrap:clean
-end
-
-function build
-    pnpm build:all
-end
-
-function check
-    pnpm tsc:check
-end
-
-function bb
-    boot && build
-end
-
-function bck
-    build && check
-end
-
-function bbc
-    bb && check
-end
-
-function sd
-    pnpm start:dev
-end
-
-function bw
-    pnpm build:watch
-end
-
-function gt
-    pnpm gt:gen
-end
-
-function syncent
-    pnpm build:ent:sync
-end
-
-function genmigration
-    pnpm sequelize migration:generate --name $argv[1]
 end
 
 # bun

@@ -1,3 +1,3 @@
 function fish_greeting
-    nerdfetch
+    nerdfetch-rs
 end
