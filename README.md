@@ -19,6 +19,7 @@ Ensure that you have the following installed in your system.
  - eza
  - fisher
  - bass
+ - fd
 
 ## ENV Variables
 Create an environment file called `env` and add following below:
