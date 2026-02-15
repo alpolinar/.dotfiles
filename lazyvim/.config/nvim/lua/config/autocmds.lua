@@ -10,10 +10,10 @@
 local filetype_settings = {
   python = { expandtab = true, shiftwidth = 4, tabstop = 4 },
   ruby = { expandtab = true, shiftwidth = 2, tabstop = 2 },
-  javascript = { expandtab = true, shiftwidth = 4, tabstop = 4 },
-  typescript = { expandtab = true, shiftwidth = 4, tabstop = 4 },
-  javascriptreact = { expandtab = true, shiftwidth = 4, tabstop = 4 },
-  typescriptreact = { expandtab = true, shiftwidth = 4, tabstop = 4 },
+  javascript = { expandtab = true, shiftwidth = 2, tabstop = 2 },
+  typescript = { expandtab = true, shiftwidth = 2, tabstop = 2 },
+  javascriptreact = { expandtab = true, shiftwidth = 2, tabstop = 2 },
+  typescriptreact = { expandtab = true, shiftwidth = 2, tabstop = 2 },
   lua = { expandtab = true, shiftwidth = 2, tabstop = 2 },
   go = { expandtab = false, shiftwidth = 4, tabstop = 4 },
   rust = { expandtab = true, shiftwidth = 4, tabstop = 4 },
@@ -23,9 +23,9 @@ local filetype_settings = {
   html = { expandtab = true, shiftwidth = 2, tabstop = 2 },
   css = { expandtab = true, shiftwidth = 2, tabstop = 2 },
   yaml = { expandtab = true, shiftwidth = 2, tabstop = 2 },
-  json = { expandtab = true, shiftwidth = 4, tabstop = 4 },
-  jsonc = { expandtab = true, shiftwidth = 4, tabstop = 4 },
-  graphql = { expandtab = true, shiftwidth = 4, tabstop = 4 },
+  json = { expandtab = true, shiftwidth = 2, tabstop = 2 },
+  jsonc = { expandtab = true, shiftwidth = 2, tabstop = 2 },
+  graphql = { expandtab = true, shiftwidth = 2, tabstop = 2 },
   fish = { expandtab = true, shiftwidth = 4, tabstop = 4 },
 }
 
@@ -42,16 +42,5 @@ vim.api.nvim_create_autocmd("FileType", {
         vim.bo[option] = value
       end
     end
-  end,
-})
-
-vim.api.nvim_create_autocmd("FileType", {
-  pattern = "fish",
-  callback = function()
-    vim.lsp.start({
-      name = "fish-lsp",
-      cmd = { "fish-lsp", "start" },
-      cmd_env = { fish_lsp_show_client_popups = false },
-    })
   end,
 })

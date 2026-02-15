@@ -15,14 +15,21 @@ starship init fish | source
 zoxide init --cmd cd fish | source
 
 function ls
+    echo "This is an enhanced version of ls. Use with care."
     eza --icons=always --color=always --long --no-filesize --no-time --no-user $argv
 end
 
 function cat
+    echo "This is an enhanced version of cat. Use with care."
     bat $argv
 end
 
-set -Ux PNPM_HOME "$HOME/.local/share/pnpm"
-set -Ua fish_user_paths $PNPM_HOME
+set -gx PNPM_HOME "$HOME/.local/share/pnpm"
+set -gx fish_user_paths $PNPM_HOME $fish_user_paths
+
+switch (uname)
+    case Darwin
+        set -gx fish_user_paths /opt/homebrew/bin $fish_user_paths
+end
 
 mise activate fish | source

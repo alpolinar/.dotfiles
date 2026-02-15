@@ -30,6 +30,20 @@ return {
           },
         },
       },
+      tsserver = {
+        settings = {
+          typescript = {
+            preferences = {
+              importModuleSpecifierEnding = "js",
+            },
+          },
+          javascript = {
+            preferences = {
+              importModuleSpecifierEnding = "js",
+            },
+          },
+        },
+      },
     },
   },
 }
