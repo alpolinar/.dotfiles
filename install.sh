@@ -189,6 +189,7 @@ audit_existing_packages() {
         "docker:docker"
         "docker-compose:docker-compose"
         "docker-buildx:docker-buildx"
+        "rift:acsandmann/tap/rift"
     )
 
     for entry in "${cli_tools[@]}"; do
@@ -222,7 +223,6 @@ audit_existing_packages() {
     # Format: "cask_short_name:cask_full_name:app_bundle_path"
     local casks=(
         "kitty:kitty:/Applications/kitty.app"
-        "aerospace:nikitabobko/tap/aerospace:/Applications/AeroSpace.app"
     )
     for entry in "${casks[@]}"; do
         local cask_short="${entry%%:*}"
@@ -316,7 +316,7 @@ prepare_dotfiles_targets() {
 
     # Clean up remaining legacy relative Stow symlinks or back up conflicting files
     local targets=(
-        "${HOME}/.config/aerospace"
+        "${HOME}/.config/rift"
         "${HOME}/.config/fish"
         "${HOME}/.config/kitty"
         "${HOME}/.config/lazygit"
@@ -416,6 +416,16 @@ post_bootstrap() {
     fi
     if [ -x "$fish_bin" ]; then
         ok "Fish shell is ready at ${fish_bin} (configured as default shell in kitty.conf)."
+    fi
+
+    if command -v rift >/dev/null 2>&1; then
+        info "Setting up and starting Rift background service..."
+        run_cmd rift service install || warn "rift service install returned non-zero; check Accessibility permissions."
+        run_cmd rift service start || warn "rift service start returned non-zero; grant Accessibility permissions and run 'rift service restart'."
+        ok "Rift service configured. Note: On first run, grant Accessibility permissions in System Settings -> Privacy & Security -> Accessibility, then run 'rift service restart' and press Alt+Z."
+    elif [ "$DRY_RUN" = true ]; then
+        printf "\033[0;36m[DRY-RUN]\033[0m rift service install\n"
+        printf "\033[0;36m[DRY-RUN]\033[0m rift service start\n"
     fi
 }
 

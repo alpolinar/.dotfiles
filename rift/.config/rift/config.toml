@@ -1,0 +1,94 @@
+# Rift Window Manager Configuration (~/.config/rift/config.toml)
+# Documentation: https://acsandmann.github.io/rift-docs/
+
+[settings]
+animate = true
+animation_duration = 0.3
+animation_fps = 100.0
+hot_reload = true
+focus_follows_mouse = false
+mouse_follows_focus = true
+mouse_hides_on_focus = true
+auto_focus_blacklist = []
+
+[settings.layout]
+mode = "traditional"
+
+[settings.ui]
+
+[settings.ui.menu_bar]
+enabled = true
+mode = "all"
+show_empty = true
+current_display_only = false
+show_fullscreen_indicator = false
+
+[settings.ui.mission_control]
+enabled = false
+fade_duration_ms = 0.0
+show_empty_workspaces = false
+window_previews = false
+
+[settings.layout.stack]
+stack_offset = 40.0
+
+[settings.layout.gaps.outer]
+top = 5
+left = 5
+bottom = 5
+right = 5
+
+[settings.layout.gaps.inner]
+horizontal = 5
+vertical = 5
+
+[virtual_workspaces]
+enabled = true
+default_workspace_count = 4
+auto_assign_windows = true
+preserve_focus_per_workspace = true
+prevent_wrapping = true
+workspace_auto_back_and_forth = true
+mode = "global"
+workspace_rules = []
+
+[keys]
+# Toggle whether the current space is managed by rift
+"Alt + Z" = "toggle_space_activated"
+
+# Focus navigation
+"Alt + H" = { move_focus = "left" }
+"Alt + J" = { move_focus = "down" }
+"Alt + K" = { move_focus = "up" }
+"Alt + L" = { move_focus = "right" }
+
+# Move windows
+"Alt + Shift + H" = { move_node = "left" }
+"Alt + Shift + J" = { move_node = "down" }
+"Alt + Shift + K" = { move_node = "up" }
+"Alt + Shift + L" = { move_node = "right" }
+
+# Resize windows
+"Alt + Shift + Minus" = "resize_window_shrink"
+"Alt + Shift + Equal" = "resize_window_grow"
+
+# Window states
+"Alt + F" = "toggle_fullscreen"
+"Alt + Shift + F" = "toggle_window_floating"
+"Alt + Comma" = "toggle_stack"
+"Alt + Slash" = "toggle_orientation"
+
+# Switch virtual workspaces
+"Alt + 1" = { switch_to_workspace = 0 }
+"Alt + 2" = { switch_to_workspace = 1 }
+"Alt + 3" = { switch_to_workspace = 2 }
+"Alt + 4" = { switch_to_workspace = 3 }
+
+# Move window to virtual workspace
+"Alt + Shift + 1" = { move_window_to_workspace = 0 }
+"Alt + Shift + 2" = { move_window_to_workspace = 1 }
+"Alt + Shift + 3" = { move_window_to_workspace = 2 }
+"Alt + Shift + 4" = { move_window_to_workspace = 3 }
+
+# Return to last workspace
+"Alt + Tab" = "switch_to_last_workspace"

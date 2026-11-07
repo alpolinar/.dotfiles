@@ -23,17 +23,17 @@ node = "lts"
 "brew:docker" = "latest"
 "brew:docker-compose" = "latest"
 "brew:docker-buildx" = "latest"
+"brew:acsandmann/tap/rift" = "latest"
 
 # GUI Applications & Fonts (Homebrew Cask)
 "brew-cask:font-caskaydia-cove-nerd-font" = "latest"
 "brew-cask:kitty" = "latest"
-"brew-cask:nikitabobko/tap/aerospace" = "latest"
 
 [bootstrap.repos]
 "~/.tmux/plugins/tpm" = { url = "https://github.com/tmux-plugins/tpm.git" }
 
 [dotfiles]
-"~/.config/aerospace" = { source = "aerospace/.config/aerospace", mode = "symlink" }
+"~/.config/rift" = { source = "rift/.config/rift", mode = "symlink" }
 "~/.config/fish" = { source = "fish/.config/fish", mode = "symlink" }
 "~/.config/kitty" = { source = "kitty/.config/kitty", mode = "symlink" }
 "~/.config/lazygit" = { source = "lazygit/.config/lazygit", mode = "symlink" }

@@ -26,6 +26,7 @@ All workstation tools, GUI apps, fonts, and runtimes are declaratively configure
 - `lazydocker`
 - `lazygit`
 - `neovim` (LazyVim)
+- `rift` (`acsandmann/tap/rift`)
 - `ripgrep`
 - `starship`
 - `tmux` (with [TPM](https://github.com/tmux-plugins/tpm) via `[bootstrap.repos]`)
@@ -34,7 +35,6 @@ All workstation tools, GUI apps, fonts, and runtimes are declaratively configure
 
 ### Homebrew Casks & Fonts (`[bootstrap.packages]`)
 - `kitty`
-- `aerospace` (`nikitabobko/tap/aerospace`)
 - `font-caskaydia-cove-nerd-font`
 
 ### Language Runtimes (`[tools]`)
@@ -63,6 +63,7 @@ cd ~/Dev/.dotfiles
    - Symlinks all dotfiles defined under `[dotfiles]` into `~/.config`.
 6. **Post-Bootstrap Setup**:
    - Installs all configured `tmux` plugins headlessly via `~/.tmux/plugins/tpm/bin/install_plugins`.
+   - Installs and starts the **Rift** window manager launchd service (`rift service install` & `rift service start`). On first run, grant macOS Accessibility permissions in **System Settings → Privacy & Security → Accessibility**, run `rift service restart`, and press `Alt + Z` to activate window tiling on the current space.
 
 To preview what `install.sh` will do without making any changes:
 ```bash

@@ -83,7 +83,7 @@ unapply_dotfiles() {
 
     # Remove any symlinks pointing to DOTFILES_DIR or legacy ~/.dotfiles
     local targets=(
-        "${HOME}/.config/aerospace"
+        "${HOME}/.config/rift"
         "${HOME}/.config/fish"
         "${HOME}/.config/kitty"
         "${HOME}/.config/lazygit"
@@ -144,6 +144,18 @@ remove_tpm() {
 }
 
 # ------------------------------------------------------------------------------
+# Step 2.5: Stop and Uninstall Rift Service
+# ------------------------------------------------------------------------------
+remove_rift_service() {
+    if command -v rift >/dev/null 2>&1; then
+        info "Stopping and uninstalling Rift service..."
+        run_cmd rift service stop 2>/dev/null || true
+        run_cmd rift service uninstall 2>/dev/null || true
+        ok "Rift service removed."
+    fi
+}
+
+# ------------------------------------------------------------------------------
 # Step 3: Optionally Uninstall Bootstrapped Homebrew Packages & Casks
 # ------------------------------------------------------------------------------
 uninstall_packages() {
@@ -170,10 +182,10 @@ uninstall_packages() {
 
     local formulae=(
         bat eza fd fish fzf lazygit neovim ripgrep starship tmux yazi zoxide
-        fastfetch gh btop lazydocker colima docker docker-compose docker-buildx
+        fastfetch gh btop lazydocker colima docker docker-compose docker-buildx rift
     )
     local casks=(
-        font-caskaydia-cove-nerd-font kitty aerospace
+        font-caskaydia-cove-nerd-font kitty
     )
 
     info "Uninstalling bootstrapped Homebrew formulae..."
@@ -213,6 +225,7 @@ main() {
     info "Starting uninstall for ${DOTFILES_DIR}..."
     unapply_dotfiles
     remove_tpm
+    remove_rift_service
     uninstall_packages
     uninstall_mise
     ok "Uninstall complete."
