@@ -12,10 +12,18 @@ All workstation tools, GUI apps, fonts, and runtimes are declaratively configure
 
 ### Homebrew Formulae (`[bootstrap.packages]`)
 - `bat`
+- `btop`
+- `colima`
+- `docker`
+- `docker-buildx`
+- `docker-compose`
 - `eza`
+- `fastfetch`
 - `fd`
 - `fish` (configured as the default shell in `kitty.conf`)
 - `fzf`
+- `gh`
+- `lazydocker`
 - `lazygit`
 - `neovim` (LazyVim)
 - `ripgrep`
@@ -31,7 +39,6 @@ All workstation tools, GUI apps, fonts, and runtimes are declaratively configure
 
 ### Language Runtimes (`[tools]`)
 - `node = "lts"` (used by Neovim Mason LSP and web tooling)
-- `java = "21"`
 
 ---
 
