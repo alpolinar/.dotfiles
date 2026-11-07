@@ -1,0 +1,42 @@
+[tools]
+java = "21"
+node = "lts"
+
+[bootstrap.packages]
+# Core CLI utilities
+"brew:bat" = "latest"
+"brew:eza" = "latest"
+"brew:fd" = "latest"
+"brew:fish" = "latest"
+"brew:fzf" = "latest"
+"brew:lazygit" = "latest"
+"brew:neovim" = "latest"
+"brew:ripgrep" = "latest"
+"brew:starship" = "latest"
+"brew:tmux" = "latest"
+"brew:yazi" = "latest"
+"brew:zoxide" = "latest"
+"brew:fastfetch" = "latest"
+"brew:gh" = "latest"
+"brew:btop" = "latest"
+"brew:lazydocker" = "latest"
+"brew:colima" = "latest"
+
+# GUI Applications & Fonts (Homebrew Cask)
+"brew-cask:font-caskaydia-cove-nerd-font" = "latest"
+"brew-cask:kitty" = "latest"
+"brew-cask:nikitabobko/tap/aerospace" = "latest"
+
+[bootstrap.repos]
+"~/.tmux/plugins/tpm" = { url = "https://github.com/tmux-plugins/tpm.git" }
+
+[dotfiles]
+"~/.config/aerospace" = { source = "aerospace/.config/aerospace", mode = "symlink" }
+"~/.config/fish" = { source = "fish/.config/fish", mode = "symlink" }
+"~/.config/kitty" = { source = "kitty/.config/kitty", mode = "symlink" }
+"~/.config/lazygit" = { source = "lazygit/.config/lazygit", mode = "symlink" }
+"~/.config/nvim" = { source = "lazyvim/.config/nvim", mode = "symlink" }
+"~/.config/starship" = { source = "starship/.config/starship", mode = "symlink" }
+"~/.config/tmux" = { source = "tmux/.config/tmux", mode = "symlink" }
+"~/.config/yazi" = { source = "yazi/.config/yazi", mode = "symlink" }
+"~/.config/mise/config.toml" = { source = "mise.toml", mode = "symlink" }
