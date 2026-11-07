@@ -181,6 +181,14 @@ audit_existing_packages() {
         "tmux:tmux"
         "yazi:yazi"
         "zoxide:zoxide"
+        "fastfetch:fastfetch"
+        "gh:gh"
+        "btop:btop"
+        "lazydocker:lazydocker"
+        "colima:colima"
+        "docker:docker"
+        "docker-compose:docker-compose"
+        "docker-buildx:docker-buildx"
     )
 
     for entry in "${cli_tools[@]}"; do
@@ -281,7 +289,7 @@ install_mise() {
 # ------------------------------------------------------------------------------
 prepare_dotfiles_targets() {
     info "Preparing ~/.config targets for mise dotfiles..."
-    run_cmd mkdir -p "${HOME}/.config" "${HOME}/.config/mise"
+    run_cmd mkdir -p "${HOME}/.config" "${HOME}/.config/mise" "${HOME}/.docker" "${HOME}/.colima/default" "${HOME}/.colima/_templates"
 
     # Handle ~/.config/kitty if GNU Stow created a directory of symlinks
     local kitty_dir="${HOME}/.config/kitty"
@@ -318,6 +326,9 @@ prepare_dotfiles_targets() {
         "${HOME}/.config/tmux"
         "${HOME}/.config/yazi"
         "${HOME}/.config/mise/config.toml"
+        "${HOME}/.docker/config.json"
+        "${HOME}/.colima/default/colima.yaml"
+        "${HOME}/.colima/_templates/default.yaml"
     )
 
     for target in "${targets[@]}"; do

@@ -93,6 +93,9 @@ unapply_dotfiles() {
         "${HOME}/.config/tmux"
         "${HOME}/.config/yazi"
         "${HOME}/.config/mise/config.toml"
+        "${HOME}/.docker/config.json"
+        "${HOME}/.colima/default/colima.yaml"
+        "${HOME}/.colima/_templates/default.yaml"
     )
 
     for target in "${targets[@]}"; do
@@ -167,6 +170,7 @@ uninstall_packages() {
 
     local formulae=(
         bat eza fd fish fzf lazygit neovim ripgrep starship tmux yazi zoxide
+        fastfetch gh btop lazydocker colima docker docker-compose docker-buildx
     )
     local casks=(
         font-caskaydia-cove-nerd-font kitty aerospace

@@ -1,5 +1,4 @@
 [tools]
-java = "21"
 node = "lts"
 
 [bootstrap.packages]
@@ -21,6 +20,9 @@ node = "lts"
 "brew:btop" = "latest"
 "brew:lazydocker" = "latest"
 "brew:colima" = "latest"
+"brew:docker" = "latest"
+"brew:docker-compose" = "latest"
+"brew:docker-buildx" = "latest"
 
 # GUI Applications & Fonts (Homebrew Cask)
 "brew-cask:font-caskaydia-cove-nerd-font" = "latest"
@@ -40,3 +42,6 @@ node = "lts"
 "~/.config/tmux" = { source = "tmux/.config/tmux", mode = "symlink" }
 "~/.config/yazi" = { source = "yazi/.config/yazi", mode = "symlink" }
 "~/.config/mise/config.toml" = { source = "mise.toml", mode = "symlink" }
+"~/.docker/config.json" = { source = "docker/.docker/config.json", mode = "symlink" }
+"~/.colima/default/colima.yaml" = { source = "colima/.colima/default/colima.yaml", mode = "symlink" }
+"~/.colima/_templates/default.yaml" = { source = "colima/.colima/default/colima.yaml", mode = "symlink" }

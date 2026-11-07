@@ -6,6 +6,7 @@ set -gx EDITOR nvim
 set -gx STARSHIP_CONFIG "$HOME/.config/starship/starship.toml"
 set -gx WEBKIT_DISABLE_COMPOSITING_MODE 1
 set -gx PNPM_HOME "$HOME/.local/share/pnpm"
+set -gx DOCKER_HOST "unix://$HOME/.colima/default/docker.sock"
 
 # fish_add_path deduplicates and silently skips directories that do not exist
 fish_add_path -g \
